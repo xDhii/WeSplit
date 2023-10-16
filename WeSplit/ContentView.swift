@@ -56,7 +56,7 @@ struct ContentView: View {
                             Text($0, format: .percent)
                         }
                     }
-                    .pickerStyle(.navigationLink)
+                    .pickerStyle(.segmented)
                 }
                 
                 Section("Amount per person") {
@@ -65,6 +65,7 @@ struct ContentView: View {
                 
                 Section("Table Total") {
                     Text(grandTotal, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        .foregroundStyle(tipPercentage == 0 ? .red : .blue)
                 }
                 
             }
